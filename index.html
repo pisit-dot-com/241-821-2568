@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--ไม่แสดงผล-->
+    <style>
+        @font-face{
+            font-family: 'Roboto';
+            src: url(./Roboto/Roboto-Italic-VariableFont_wdth\,wght.ttf)
+        }
+        body{
+            background-color: grey;
+            min-height: 100vh;
+            font-family: 'Roboto' ;
+        }
+
+        #register-form{
+            color:red;
+            margin-left: 100px;
+            padding-left: 100px;
+            border: 1px solid red;
+            margin-right: 100px;
+            padding-right: 100px;
+            text-align: center;
+        
+        }
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <!--แสดงผล-->
+        <div>
+            <h1 id="register-form">Register</h1> 
+        </div>
+        <h1 id="register-form">Register</h1>
+        ชื่อ : <input class="form-control" type="text" name="name">
+        นามสกุล : <input class="form-control" type="text" name="surname"><br>
+        อายุ : <input type="text" name="age" min="0" max="150"><br>
+        เพศ : 
+        <input type="radio" name="gender" value="male">ชาย
+        <input type="radio" name="gender" value="female">หญิง<br>
+        งานอดิเรก :
+        <input type="checkbox" name="hobby" value="reading">อ่านหนังสือ
+        <input type="checkbox" name="hobby" value="traveling">ท่องเที่ยว
+        <input type="checkbox" name="hobby" value="sports">เล่นกีฬา<br>
+        คำอธิบายตัวเอง : <br>
+        <textarea name="description" rows="4" cols="50"></textarea> <br>
+        <input type="submit" value="submit">
+    </div>
+    
+</body>
+</html>

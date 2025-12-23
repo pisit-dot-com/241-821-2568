@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container .item{
+            color: red;
+            background-color: lightblue;
+        }
+
+        .button{
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .button.active{
+            background-color: blue;
+        }
+
+        .button.warning{
+            background-color: red;
+        }
+
+        .item1 + .item2{
+            background-color: lightblue;
+
+        }
+
+        input[type="text"]{
+            border: 2px solid green;
+            margin-bottom: 10px;
+        }
+
+        .button-new{
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .button-new:hover{
+            background-color: blue;
+        }
+
+        .button-new:active{
+            background-color: red;
+        }
+
+        .button-new:focus{
+            background-color: yellow;
+
+        }
+
+        input:focus{
+            background-color: orange;
+            border: 5px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        Container Content
+        <div class="item">
+            Item Content
+        </div>
+    </div>
+    <div class="footer-container">
+        Container Content
+        <div class="item">
+            Item Content
+        </div>
+    </div>
+    <button class="button">Click me</button>
+    <button class="button active">Delete</button>
+    <button class="button warning">Warning</button>
+    <div class="item1">item 1</div>
+    <div class="item2">item 2</div>
+
+    <input type="text" name="sample-input">
+    <input type="text" name="another-input">
+    <br>
+    <button class="button-new">Click Me</button><br>
+    <input type="text">
+</body>
+</html>
