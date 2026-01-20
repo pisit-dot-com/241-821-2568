@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- ชื่อ <input 
+    type="text"
+    class="input"
+    id="fname"
+    value="ทดสอบชื่อ"
+    name="fname"/> 
+
+    นามสกุล <input 
+    type="text"
+    class="input"
+    id="fname"
+    value="ทดสอบนามสกุล"
+    name="lname"/>  -->
+
+    <!-- เทส <input 
+    type="text"
+    class="input"
+    id="test"
+    value="ทดสอบปีศาจ"
+    name="test"/>`  -->
+
+    <!-- งานอดิเรก 
+    <input type="checkbox" id="hobby" name="reading"> reading
+    <input type="checkbox" id="hobby" name="travelling"> travelling
+    <input type="checkbox" id="hobby" name="Gaming"> Gaming
+    </body> -->
+    <!-- <button onclick="userClicked"> คลิก !!</button>
+    <div onclick="divClick">Test</div> -->
+    <input type="radio" name="gender" value="male" onchange="changeGender()" checked="true"> male
+    <input type="radio" name="gender" value="female" onchange="changeGender()"> Female
+
+    <script>
+        function changeGender() {
+            console.log("คุณเปลี่ยนเพศแล้ว");
+            let genderinputs = document.querySelectorAll("input[name='gender']");
+
+            for (let i = 0; i < genderinputs.length; i++) {
+                if (genderinputs[i].checked) {
+                    console.log("เพศที่เลือกคือ " + genderinputs[i].value);
+                }
+            }
+        }
+        // let fnameDOM = document.getElementsByClassName("input");
+        // console.log(fnameDOM[0].value);
+        // for (let i = 0; i < fnameDOM.length; i++) {
+        //     console.log(fnameDOM[i].value);
+        // }
+
+        // let fname = document.querySelector(".input[name='test']");
+        // console.log(fname.value);
+        // let hobbies = document.querySelectorAll("input[name='hobby']");
+        // for (let i = 0; i < hobbies.length; i++) {
+        //     if (hobbies[i]) {
+        //         console.log(hobbies[i].name);
+        //     }
+        // }
+        //     function userClicked() {
+        //         alert("คุณคลิกปุ่มแล้ว");
+        //     }
+        //     function divClick() {
+        //         alert("คุณคลิกที่ div แล้ว");
+        //     }
+    </script>
+
+</body>
+
+</html>
