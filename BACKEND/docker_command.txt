@@ -1,0 +1,44 @@
+docker ps --all 
+ลิส container ออกมา
+
+ls
+
+docker run hello-world 
+ทำการรัน container 
+
+docker run busybox ls
+รัน container ละทำการ list folder
+
+docker run busybox ping google.com
+
+docker stop container_id
+
+docker pull busybox
+
+docker create busybox ping google.com
+
+docker start container_id
+
+docker rm container_id
+ลบcontainer
+
+docker system prune
+ทำการ remove container !!อันตรายต่อprojectระดับproduction
+
+docker run nginx
+
+docker exec -it container_id sh
+
+cat ชื่อไฟล์
+เป็นการดูว่ามีอะไรอยุ่ในไฟล์
+
+docker run -p 80:80 nginx
+
+docker ps 
+ลิส container ที่รันอยุ่ขึ้นมาแสดง
+
+docker run -d -p 9001:80 nginx
+
+docker stop ae87f9d13883 7fc4afaccec4 5a2970b7f2ce 
+
+docker rm ae87f9d13883 7fc4afaccec4 5a2970b7f2ce  
