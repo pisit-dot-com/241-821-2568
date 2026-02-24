@@ -1,35 +1,57 @@
 const express = require(`express`);
 const bodyParser = require(`body-parser`);
 const app = express();
+const mysql = require(`mysql2/promise`);
 const port = 8000;
 
+let conn = null;
+const initDBconnection = async () => {
+     const connection = await mysql.createConnection({
+            host: 'localhost',
+            user: 'root',
+            password: 'root',
+            database: 'webdb',
+            port: 8821  
+});
+    conn = connection;
+}
+
 app.use(bodyParser.json());
-let users = [];
-let counter = 1;
 
-// path = Get /test
-app.get(`/users`, (req, res) => {
-    res.json(users);
+//path = GET /users สำหรับ get ข้อมูล user ทั้งหมด
+app.get(`/users`, async (req, res) => {
+    const [rows, fields] = await conn.execute(`SELECT * FROM users`);
+    res.json(rows);
 });
 
-// path = Post /user
-app.post(`/user`, (req, res) => {
-    let user = req.body;
-    users.push(user);
-    user.id = counter;
-    counter += 1;
-    res.json({
-        message: `User added successfully!`,
-        user: user
-    }); 
+app.post('/users', async (req, res) => {
+    try {
+        let user = req.body;
+
+        console.log("BODY:", user);
+
+        const [result] = await conn.query(
+            "INSERT INTO users SET ?",
+            user
+        );
+
+        console.log("result", result);
+
+        res.json({
+            message: "User created successfully",
+            data: result
+        });
+
+    } catch (err) {
+        console.error("ERROR:", err);
+        res.status(500).json({
+            error: "Insert failed",
+            detail: err.message
+        });
+    }
 });
 
-// path = Put / users/:id
-app.put(`/users/:id`, (req, res) => {
-    let id = req.params.id;
-    let selectedIndex = users.findIndex(user => user.id == id);
-});
-
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+app.listen(port, async () => {
+    await initDBconnection();
+    console.log(`Server running on port ${port}`);
 });
